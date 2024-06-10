@@ -7,6 +7,7 @@
 </head>
 <body>
   <div>Device Test</div>
+  <p class="device"></p>
   <script>
     const userAgent = navigator.userAgent;
     const platform = navigator.platform;
@@ -14,14 +15,21 @@
 
     const isIOS = /iPad|iPhone|iPod/.test(userAgent) || (platform === 'MacIntel' && maxTouchPoints > 1);
     const isAndroidTablet = /Android/i.test(userAgent) && !/mobile/i.test(userAgent);
+    
+    let device = "";
 
     if (isAndroidTablet || (isIOS && maxTouchPoints > 1)) {
       console.log("Tablet"); // Android 태블릿과 iPad를 포함한 모든 태블릿
+      device = "Tablet";
     } else if (/Android/i.test(userAgent) || /iPhone|iPod/i.test(userAgent) || (isIOS && maxTouchPoints <= 1)) {
       console.log("Mobile"); // 모바일 디바이스
+      device = "Mobile";
     } else {
       console.log("PC"); // 그 외 PC 등
+      device = "PC";
     }
+
+    document.querySelector(".device").innerHTML = device;
 
   // }, []);
 
