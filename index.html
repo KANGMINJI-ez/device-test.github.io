@@ -8,6 +8,8 @@
 <body>
   <div>Device Test</div>
   <p class="device"></p>
+  <p class=touch"></p>
+  <p class=agent"></p>
   <script>
     const userAgent = navigator.userAgent;
     const platform = navigator.platform;
@@ -30,6 +32,8 @@
     }
 
     document.querySelector(".device").innerHTML = device;
+    document.querySelector(".touch").innerHTML = maxTouchPoints;
+
 
   // }, []);
 
