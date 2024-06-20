@@ -18,6 +18,12 @@
    <path d="M4.5 9L9.14286 14L16 6" stroke="#939393" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
   </svg>
   <script>
+    window.addEventListener("resize", function () {
+      document.querySelector(".height").innerHTML = window.innerHeight;
+      console.log(window.innerHeight);
+    })
+
+
     const userAgent = navigator.userAgent;
     const platform = navigator.platform;
     const maxTouchPoints = navigator.maxTouchPoints;
@@ -47,10 +53,7 @@
   // return deviceType;
 
 
-  window.addEventListener("resize", function() {
-    document.querySelector(".height").innerHTML = window.innerHeight;
-    console.log(window.innerHeight);
-  })
+  
   </script>
 </body>
 </html>
