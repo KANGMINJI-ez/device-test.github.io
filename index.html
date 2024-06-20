@@ -6,6 +6,7 @@
   <title>device test</title>
 </head>
 <body>
+  <div class="height"></div>
   <div>Device Test aaaaaaaaa</div>
   device: <p class="device"></p>
   touch: <p class=touch"></p>
@@ -44,6 +45,12 @@
   // }, []);
 
   // return deviceType;
+
+
+  window.addEventListener("resize", function() {
+    document.querySelector(".height").innerHTML = window.innerHeight;
+    console.log(window.innerHeight);
+  })
   </script>
 </body>
 </html>
